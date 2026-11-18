@@ -1,1 +1,741 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>StrikeLikeMike | Premium Football Betting Insights</title>
+<meta name="description" content="StrikeLikeMike – Football betting insights, free picks, VIP selections, transparent results and betting education.">
+
+<meta name="theme-color" content="#101b35">
+
+<style>
+:root {
+  --navy: #101b35;
+  --deep: #080f20;
+  --panel: #14213c;
+  --panel2: #192947;
+  --gold: #d6bc83;
+  --gold-light: #ead9ae;
+  --ivory: #f2efe8;
+  --muted: #aab5c8;
+  --line: rgba(214,188,131,.22);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--deep);
+  color: var(--ivory);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
+}
+
+a { color: inherit; text-decoration: none; }
+
+.container {
+  width: min(1160px, 90%);
+  margin: auto;
+}
+
+/* ANNOUNCEMENT */
+
+.announcement {
+  background: #172544;
+  border-bottom: 1px solid var(--line);
+  color: var(--gold-light);
+  text-align: center;
+  padding: 9px 15px;
+  font-size: 12px;
+  letter-spacing: 1px;
+}
+
+/* HEADER */
+
+header {
+  background: rgba(8,15,32,.97);
+  border-bottom: 1px solid var(--line);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+}
+
+.logo {
+  color: var(--gold);
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  white-space: nowrap;
+}
+
+.logo span {
+  display: block;
+  font-size: 9px;
+  color: var(--muted);
+  letter-spacing: 4px;
+  text-align: center;
+  font-weight: normal;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 21px;
+}
+
+nav a {
+  color: #d9deea;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: .7px;
+  transition: .2s;
+}
+
+nav a:hover { color: var(--gold); }
+
+nav .nav-vip {
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  padding: 8px 13px;
+}
+
+/* HERO */
+
+.hero {
+  background:
+    radial-gradient(ellipse at 50% 0%, #24395f 0%, transparent 65%),
+    linear-gradient(145deg, #152442, #080f20 75%);
+  text-align: center;
+  padding: 105px 20px 100px;
+  border-bottom: 1px solid var(--line);
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 4px;
+  font-weight: bold;
+  margin-bottom: 18px;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 65px);
+  letter-spacing: 3px;
+  line-height: 1.15;
+  color: var(--gold-light);
+  margin-bottom: 22px;
+}
+
+.hero p {
+  color: var(--muted);
+  max-width: 650px;
+  margin: 0 auto 30px;
+  font-size: 16px;
+}
+
+.button {
+  display: inline-block;
+  background: linear-gradient(135deg, #ead9ae, #c5a568);
+  color: #101b35;
+  padding: 13px 25px;
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 3px;
+  margin: 5px;
+  transition: .2s;
+}
+
+.button:hover { transform: translateY(-2px); }
+
+.button-outline {
+  background: transparent;
+  color: var(--gold);
+  border: 1px solid var(--gold);
+}
+
+/* SECTIONS */
+
+section {
+  padding: 75px 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 38px;
+}
+
+.section-heading h2 {
+  color: var(--gold-light);
+  font-size: 27px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.kicker {
+  color: var(--gold);
+  font-size: 10px;
+  letter-spacing: 3px;
+  margin-bottom: 8px;
+}
+
+/* CARDS */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+}
+
+.card {
+  background: linear-gradient(145deg, var(--panel2), var(--panel));
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 24px;
+}
+
+.card h3 {
+  color: var(--gold-light);
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+
+.card p {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.pick-card {
+  max-width: 850px;
+  margin: auto;
+  border-top: 2px solid var(--gold);
+}
+
+.vip-card {
+  border-color: var(--gold);
+  background: linear-gradient(145deg, #1d2d4d, #111d35);
+}
+
+/* TABLES */
+
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 700px;
+  text-align: left;
+  font-size: 12px;
+}
+
+th {
+  background: #1b2b49;
+  color: var(--gold);
+  padding: 15px 13px;
+  font-size: 10px;
+  letter-spacing: .8px;
+}
+
+td {
+  padding: 16px 13px;
+  color: var(--muted);
+  border-top: 1px solid var(--line);
+}
+
+.empty {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+}
+
+/* STATISTICS */
+
+.statistics {
+  background: #0e192d;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+}
+
+.stat {
+  text-align: center;
+  padding: 24px 12px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.stat strong {
+  display: block;
+  color: var(--gold-light);
+  font-size: 27px;
+  margin-bottom: 5px;
+}
+
+.stat span {
+  color: var(--muted);
+  font-size: 10px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.archive {
+  display: block;
+  width: fit-content;
+  margin: 25px auto 0;
+  color: var(--gold);
+  font-size: 12px;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+}
+
+/* SUBSCRIPTIONS */
+
+.packages {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.package {
+  text-align: center;
+  padding: 32px 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+}
+
+.package.featured {
+  border: 1px solid var(--gold);
+  background: linear-gradient(145deg, #233454, #14213c);
+}
+
+.package h3 {
+  color: var(--gold-light);
+  font-size: 17px;
+}
+
+.price {
+  color: var(--gold);
+  font-size: 39px;
+  font-weight: bold;
+  margin: 17px 0;
+}
+
+.package p {
+  color: var(--muted);
+  font-size: 12px;
+  margin-bottom: 18px;
+}
+
+/* SUPPORT & FOOTER */
+
+.support {
+  text-align: center;
+  background: #111d35;
+  border-top: 1px solid var(--line);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.social-links a {
+  color: var(--gold);
+  border: 1px solid var(--line);
+  padding: 10px 18px;
+  font-size: 11px;
+}
+
+footer {
+  background: #060b16;
+  border-top: 1px solid var(--line);
+  padding: 38px 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+footer .footer-logo {
+  color: var(--gold);
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+
+footer p { margin: 8px 0; }
+
+footer a { color: var(--gold); }
+
+@media(max-width: 850px) {
+  .header-inner {
+    flex-direction: column;
+    padding: 18px 0;
+  }
+  nav { justify-content: center; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+  .stat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 560px) {
+  .hero { padding: 75px 15px; }
+  .hero h1 { font-size: 36px; }
+  section { padding: 55px 0; }
+  .grid, .packages { grid-template-columns: 1fr; }
+  nav { gap: 13px; }
+  nav a { font-size: 10px; }
+  .logo { font-size: 22px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="announcement">
+  STRIKELIKEMIKE &nbsp; | &nbsp; SMART ANALYSIS. CLEAR STRATEGY. TRANSPARENT RESULTS.
+</div>
+
+<header>
+  <div class="container header-inner">
+    <a href="#home" class="logo">
+      STRIKELIKEMIKE
+      <span>THE ART OF ANALYSIS</span>
+    </a>
+
+    <nav>
+      <a href="#home">HOME</a>
+      <a href="#free">FREE PICKS</a>
+      <a href="#vip">VIP PICKS</a>
+      <a href="#bookmakers">BOOKMAKERS</a>
+      <a href="#theory">BETTING THEORY</a>
+      <a href="#subscriptions" class="nav-vip">SUBSCRIPTIONS</a>
+      <a href="#about">ABOUT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+
+<div class="hero">
+  <div class="eyebrow">WELCOME TO STRIKELIKEMIKE</div>
+  <h1>SMART ANALYSIS.<br>CLEAR STRATEGY.</h1>
+  <p>
+    Football betting insights, carefully evaluated selections
+    and transparent performance tracking.
+    Knowledge before predictions.
+  </p>
+  <a href="#free" class="button">EXPLORE FREE PICKS</a>
+  <a href="#vip" class="button button-outline">DISCOVER VIP</a>
+</div>
+
+<section id="free">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">OPEN TO EVERYONE</div>
+      <h2>TODAY'S FREE PICK</h2>
+      <p>Our latest publicly available selection.</p>
+    </div>
+
+    <div class="card pick-card">
+      <h3>FREE SELECTION</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>DATE</th>
+              <th>LEAGUE</th>
+              <th>GAME</th>
+              <th>PICK</th>
+              <th>ODD</th>
+              <th>RESULT</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="7" class="empty">
+                Today's free selection will be published here.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <a href="#free-archive" class="archive">VIEW FREE PICKS ARCHIVE →</a>
+    </div>
+  </div>
+</section>
+
+<section class="statistics">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">PERFORMANCE TRACKING</div>
+      <h2>FREE PICKS STATISTICS</h2>
+      <p>Performance figures will be calculated from published picks.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat"><strong>—</strong><span>Success %</span></div>
+      <div class="stat"><strong>—</strong><span>Yield / ROI</span></div>
+      <div class="stat"><strong>—</strong><span>Average Odd</span></div>
+      <div class="stat"><strong>—</strong><span>Average Stake</span></div>
+    </div>
+    <a class="archive" href="#free-archive">EXPLORE FREE ARCHIVE →</a>
+  </div>
+</section>
+
+<section id="vip">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">EXCLUSIVE SELECTIONS</div>
+      <h2>TODAY'S VIP PICK</h2>
+      <p>Premium selections and detailed betting insights.</p>
+    </div>
+
+    <div class="card pick-card vip-card">
+      <h3>VIP SELECTION</h3>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>DATE</th>
+              <th>LEAGUE</th>
+              <th>GAME</th>
+              <th>PICK</th>
+              <th>ODD</th>
+              <th>RESULT</th>
+              <th>STATUS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td colspan="7" class="empty">
+                VIP selections are reserved for members.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <a href="#vip-archive" class="archive">VIEW VIP PICKS ARCHIVE →</a>
+    </div>
+  </div>
+</section>
+
+<section class="statistics">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">PREMIUM PERFORMANCE</div>
+      <h2>VIP PICKS STATISTICS</h2>
+      <p>Transparent tracking of our VIP selections.</p>
+    </div>
+
+    <div class="stat-grid">
+      <div class="stat"><strong>—</strong><span>Success %</span></div>
+      <div class="stat"><strong>—</strong><span>Yield / ROI</span></div>
+      <div class="stat"><strong>—</strong><span>Average Odd</span></div>
+      <div class="stat"><strong>—</strong><span>Average Stake</span></div>
+    </div>
+    <a class="archive" href="#vip-archive">EXPLORE VIP ARCHIVE →</a>
+  </div>
+</section>
+
+<section id="subscriptions">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">JOIN THE VIP EXPERIENCE</div>
+      <h2>SUBSCRIPTION PACKAGES</h2>
+      <p>Choose the membership duration that suits you.</p>
+    </div>
+
+    <div class="packages">
+      <div class="package">
+        <h3>1 MONTH</h3>
+        <div class="price">€28</div>
+        <p>One month of VIP membership.</p>
+        <a href="#contact" class="button button-outline">JOIN VIP</a>
+      </div>
+
+      <div class="package featured">
+        <div class="kicker">POPULAR CHOICE</div>
+        <h3>2 MONTHS</h3>
+        <div class="price">€48</div>
+        <p>Two months of VIP membership.</p>
+        <a href="#contact" class="button">JOIN VIP</a>
+      </div>
+
+      <div class="package">
+        <h3>4 MONTHS</h3>
+        <div class="price">€80</div>
+        <p>Four months of VIP membership.</p>
+        <a href="#contact" class="button button-outline">JOIN VIP</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="bookmakers">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">OUR PARTNERS</div>
+      <h2>BOOKMAKERS</h2>
+      <p>Bookmaker information, analysis and affiliate partnerships.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Bookmaker Analysis</h3>
+        <p>Explore bookmaker information and comparisons.</p>
+      </div>
+      <div class="card">
+        <h3>Affiliate Partners</h3>
+        <p>Our partner information and relevant disclosures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="theory">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">KNOWLEDGE & EDUCATION</div>
+      <h2>BETTING THEORY</h2>
+      <p>Understand the concepts and mathematics behind betting.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Asian Handicap</h3>
+        <p>Learn the fundamentals of Asian Handicap markets.</p>
+      </div>
+      <div class="card">
+        <h3>Capital Management</h3>
+        <p>Understand bankroll management, stakes and risk.</p>
+      </div>
+      <div class="card">
+        <h3>Basic for Betting</h3>
+        <p>Explore odds, probability and essential terminology.</p>
+      </div>
+      <div class="card">
+        <h3>Betting Strategies</h3>
+        <p>Educational material about Martingale, Labouchere and Fibonacci.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="free-archive">
+  <div class="container">
+    <div class="section-heading">
+      <h2>FREE PICKS ARCHIVE</h2>
+      <p>Our historical free selections will be listed here.</p>
+    </div>
+    <div class="card empty">Free picks archive coming soon.</div>
+  </div>
+</section>
+
+<section id="vip-archive">
+  <div class="container">
+    <div class="section-heading">
+      <h2>VIP PICKS ARCHIVE</h2>
+      <p>Historical VIP selections and results.</p>
+    </div>
+    <div class="card empty">VIP picks archive coming soon.</div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-heading">
+      <div class="kicker">THE PERSON BEHIND THE PROJECT</div>
+      <h2>ABOUT MIKE</h2>
+      <p>
+        StrikeLikeMike is built around a passion for football,
+        analytical thinking and disciplined betting.
+        Our philosophy is simple: knowledge, strategy and transparency.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="support" id="contact">
+  <div class="container">
+    <div class="section-heading">
+      <h2>CHEER A BEER</h2>
+      <p>
+        Enjoying the content? You can support the project
+        with a voluntary contribution.
+      </p>
+      <a href="mailto:YOUR-EMAIL-HERE" class="button button-outline">SUPPORT THE PROJECT</a>
+    </div>
+
+    <div class="section-heading">
+      <h2>FOLLOW STRIKELIKEMIKE</h2>
+      <p>Connect with us on social media.</p>
+      <div class="social-links">
+        <a href="#contact">INSTAGRAM</a>
+        <a href="#contact">YOUTUBE</a>
+        <a href="#contact">TIKTOK</a>
+        <a href="#contact">X</a>
+      </div>
+    </div>
+
+    <div class="section-heading">
+      <h2>CONTACT</h2>
+      <p>For questions and enquiries, contact us by email.</p>
+      <a href="mailto:YOUR-EMAIL-HERE" class="button">EMAIL US</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="footer-logo">STRIKELIKEMIKE</div>
+  <p>Smart Analysis. Clear Strategy. Transparent Results.</p>
+  <p>© 2026 StrikeLikeMike. All rights reserved.</p>
+  <p>18+ | Sports betting involves risk. No profits are guaranteed.</p>
+  <p>Please gamble responsibly.</p>
+  <p>
+    <a href="#contact">Privacy Policy</a> |
+    <a href="#contact">Terms &amp; Conditions</a> |
+    <a href="#contact">Contact</a>
+  </p>
+</footer>
+
+</body>
+</html>
